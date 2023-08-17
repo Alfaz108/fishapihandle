@@ -1,0 +1,41 @@
+section{
+    margin-top: 80px;
+}
+
+.count{
+  text-align: center;
+  background:#D4ADFC;
+  padding: 20px;
+  width: 30%;
+ margin: auto;
+ -webkit-box-shadow: 0 0 5px 2px #575748;
+ -moz-box-shadow: 0 0 5px 2px #33332b;
+ box-shadow: 0 0 5px 2px #292924;
+
+}
+
+.count h1{
+    color: rgb(118, 5, 170);
+    font-size: 40px;
+    margin-bottom: 30px;
+
+}
+
+input{
+    margin-bottom: 70px;
+    margin-left: 20px;
+    background: rgb(112, 7, 47);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+#name{
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+label{
+    color: rgb(118, 5, 170);
+    font-size: 30px;
+    margin-bottom: 30px;
+}

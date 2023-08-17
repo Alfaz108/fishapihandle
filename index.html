@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fish</title>
+  </head>
+  <body>
+    <section>
+      <div class="count">
+        <h1>Fish</h1>
+
+        <form id="form">
+          <label for="image">Select an image:</label><br /><br />
+          <input type="file" id="image" name="thumbnail" accept="image/*" />
+          <br />
+          <input type="submit" value="Submit" id="submit" />
+        </form>
+        <p id="name"></p>
+      </div>
+    </section>
+    <script>
+      var form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        fetch("https://whatsapp.devsujon.com/api/v1/fishial", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((data) => alfaz(data))
+
+          .catch((error) => console.error("Error:", error));
+        form.reset();
+      });
+      const alfaz = (data) => {
+        var a = data.data;
+        var b = a.results[0];
+        var c = b.species[0];
+        var d = c.name;
+        document.getElementById("name").innerHTML = d;
+
+        console.log(c);
+        var e = c["fishangler-data"];
+        console.log(e);
+
+        var f = e.photo;
+        console.log(f);
+        var g = f.mediaUri;
+        console.log(g);
+        var img = document.createElement("img");
+        img.src = g;
+        img.style.width = "200px";
+        document.getElementById("name").appendChild(img);
+      };
+    </script>
+  </body>
+</html>
